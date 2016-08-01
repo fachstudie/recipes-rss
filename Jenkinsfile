@@ -11,5 +11,10 @@ node {
    // **       in the global configuration.
    def mvnHome = tool 'mvn'
    
-   stage 'blubb'
+   
+}
+
+approve {
+	console = fabric8Console
+	environment = "${env.JOB_NAME}-staging"
 }
