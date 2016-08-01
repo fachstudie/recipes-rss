@@ -10,7 +10,7 @@ node {
   stage 'Canary release'
   echo 'NOTE: running pipelines for the first time will take longer as build and base docker images are pulled onto the node'
   if (!fileExists ('Dockerfile')) {
-    writeFile file: 'Dockerfile', text: 'FROM fabric8/java:2.2-SNAPSHOT-onbuild'
+    writeFile file: 'Dockerfile', text: 'FROM fabric8/java:oracle-java8'
   }
 
   def newVersion = performCanaryRelease {}
