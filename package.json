@@ -1,0 +1,22 @@
+{
+  "name": "recipes-rss",
+  "version": "1.0.0",
+  "description": "A Netflix hello world test app",
+  "main": "build.gradle",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gradle build.gradle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fachstudie/recipes-rss.git"
+  },
+  "author": "James Rawlings",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fachstudie/recipes-rss/issues"
+  },
+  "homepage": "https://rss.informatik.uni-stuttgart.de"
+}
