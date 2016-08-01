@@ -2,7 +2,7 @@
 buildName: "recipes-rss"
 codeReview: false
 links:
-  Git: "https://github.com/fachstudie/recipes-rss.git"
+  Git: "github.com/fachstudie/recipes-rss"
   Job: "http://jenkins.192.168.209.241.xip.io/job/recipes-rss"
   Production: "http://172.30.88.156:80/kubernetes/pods?namespace=default-production"
   Staging: "http://172.30.88.156:80/kubernetes/pods?namespace=default-staging"
