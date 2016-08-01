@@ -1,6 +1,4 @@
 ---
-chatRoom: "netflixchatroom"
-issueProjectName: "netflixissuetracker"
 buildName: "recipes-rss"
 codeReview: false
 links:
