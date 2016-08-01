@@ -1,20 +1,23 @@
-node {
-   // Mark the code checkout 'stage'....
-   stage 'checkout'
-
-   // Get some code from a GitHub repository
-   git url: 'https://github.com/fachstudie/recipes-rss'
-   sh 'git clean -fdx; sleep 40;'
-
-   // Get the maven tool.
-   // ** NOTE: This 'mvn' maven tool must be configured
-   // **       in the global configuration.
-   def mvnHome = tool 'mvn'
-   
-   
+approve{
+      version = '0.0.1'
+      console = 'http://fabric8.192.168.209.241.xip.io'
+      environment = 'staging'
 }
 
-approve {
-	console = fabric8Console
-	environment = "${env.JOB_NAME}-staging"
+deployProject{
+      stagedProject = 'recipes-rss'
+      resourceLocation = 'target/classes/kubernetes.json'
+      environment = 'staging'
+}
+
+
+node {
+	def rc = getKubernetesJson {
+		port = 8080
+		label = 'node'
+		icon = 'https://cdn.rawgit.com/fabric8io/fabric8/dc05040/website/src/images/logos/nodejs.svg'
+		version = '0.0.1'
+	}
+	
+	kubernetesApply(file: rc, environment: 'Development', registry: 'myexternalregistry.io:5000')
 }
