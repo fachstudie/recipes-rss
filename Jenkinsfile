@@ -5,7 +5,7 @@ node {
   def envStage = utils.environmentNamespace('staging')
   def envProd = utils.environmentNamespace('production')
 
-  git 'https://github.com/fachstudie/recipes-rss'
+  git 'https://github.com/fachstudie/recipes-rss.git'
 
   stage 'Canary release'
   echo 'NOTE: running pipelines for the first time will take longer as build and base docker images are pulled onto the node'
