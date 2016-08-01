@@ -5,20 +5,20 @@ node {
   def envStage = utils.environmentNamespace('staging')
   def envProd = utils.environmentNamespace('production')
 
-  git 'https://github.com/fachstudie/recipes-rss.git'
+  git 'https://github.com/fachstudie/recipes-rss'
 
   stage 'Canary release'
   echo 'NOTE: running pipelines for the first time will take longer as build and base docker images are pulled onto the node'
   if (!fileExists ('Dockerfile')) {
-    writeFile file: 'Dockerfile', text: 'FROM fabric8/swift:2.2-SNAPSHOT-onbuild'
+    writeFile file: 'Dockerfile', text: 'FROM fabric8/java:2.2-SNAPSHOT-onbuild'
   }
 
   def newVersion = performCanaryRelease {}
 
   def rc = getKubernetesJson {
     port = 8080
-    label = 'swift'
-    icon = 'https://cdn.rawgit.com/fabric8io/fabric8-console/master/img/icons/swift.png'
+    label = 'java'
+    icon = 'http://www.iste.uni-stuttgart.de/fileadmin/user_upload/iste/zss/img/RSSBanner-WhiteBackground1.jpg'
     version = newVersion
     imageName = clusterImageName
   }
