@@ -1,0 +1,15 @@
+---
+chatRoom: "netflixchatroom"
+issueProjectName: "netflixissuetracker"
+buildName: "recipes-rss"
+codeReview: false
+links:
+  Git: "github.com/fachstudie/recipes-rss"
+  Job: "http://jenkins.192.168.209.241.xip.io/job/recipes-rss"
+  Production: "http://172.30.88.156:80/kubernetes/pods?namespace=default-prod"
+  Staging: "http://172.30.88.156:80/kubernetes/pods?namespace=default-staging"
+  Testing: "http://172.30.88.156:80/kubernetes/pods?namespace=default-testing"
+environments:
+  Testing: "default-testing"
+  Staging: "default-staging"
+  Production: "default-prod"
