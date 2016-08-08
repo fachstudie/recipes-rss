@@ -12,8 +12,8 @@ node {
     writeFile file: 'Dockerfile', text: 'FROM java:oracle-java7 \n CMD '
   }
   sh 'java -version'
-  sh 'update-alternatives --config java'
-  sh 'cat /etc/*-release'
+  sh 'yum -y install java-1.7.0-openjdk'
+  sh 'java -version'
   sh './gradlew clean build' 
 
 
