@@ -12,7 +12,7 @@ node {
     writeFile file: 'Dockerfile', text: 'FROM java:oracle-java7'
   }
   sh 'java -version'
-  sh 'cat /etc/issue'
+  sh 'cat /etc/*-release'
   sh './gradlew clean build' 
 
 
