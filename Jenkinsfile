@@ -9,9 +9,10 @@ node {
 
   stage 'Canary release'
   if (!fileExists ('Dockerfile')) {
-    writeFile file: 'Dockerfile', text: 'FROM java:oracle-java7'
+    writeFile file: 'Dockerfile', text: 'FROM java:oracle-java7 \n CMD '
   }
   sh 'java -version'
+  sh 'update-alternatives --config java'
   sh 'cat /etc/*-release'
   sh './gradlew clean build' 
 
