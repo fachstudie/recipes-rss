@@ -9,7 +9,7 @@ node {
 
   stage 'Canary release'
   sh './gradlew clean build' 
-}
+
 
   def newVersion = performCanaryRelease {}
 
