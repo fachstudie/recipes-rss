@@ -7,7 +7,7 @@ node {
 
   git 'https://github.com/fachstudie/recipes-rss'
 
-  stage 'Canary release'
+  stage 'Build-Stage'
   if (!fileExists ('Dockerfile')) {
     writeFile file: 'Dockerfile', text: 'FROM java:oracle-java7 \n CMD '
   }
@@ -17,6 +17,8 @@ node {
   sh 'java -version'
   sh './gradlew clean build' 
 
+  stage 'Testing-Stage'
+  sh './gradlew test' 
 
 }
 
