@@ -11,7 +11,7 @@ node {
   if (!fileExists ('Dockerfile')) {
     writeFile file: 'Dockerfile', text: 'FROM java:oracle-java7'
   }
-  sh java --version
+  sh 'java -version'
   sh './gradlew clean build' 
 
 
