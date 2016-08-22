@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us" class="layout-pf layout-pf-fixed transitions">
+
+  <head>
+    <title>fabric8-console</title>
+    <base href='/'></base>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css"/>
+
+    <script src="libs-21d57c1a.js"></script>
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-pf-vertical">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="fabric8 navbar-brand" href="/">
+          <img class="navbar-brand-icon" src="img/fabric8_logo_white.svg"/>
+        </a>
+      </div>
+      <nav class="fabric8 collapse navbar-collapse">
+        <hawtio-breadcrumbs-outlet></hawtio-breadcrumbs-outlet>
+        <!--
+        <ul class="nav navbar-nav" ng-controller="Main.NavController">
+          <li ng-class="projectsActive() ? 'active' : ''">
+            <a href="/workspaces" title="Projects" class="nav-item-iconic"><span class="fa fa-tasks"></span></a>
+          </li>
+          <li ng-class="runtimeActive() ? 'active' : ''">
+            <a href="/namespaces" title="Runtime" class="nav-item-iconic"><span class="fa fa-gears"></span></a>
+          </li>
+        </ul>
+        -->
+        <ul class="nav navbar-nav navbar-right navbar-iconic">
+          <li class="dropdown" ng-controller="Kubernetes.ServiceApps" ng-show="model.serviceApps.length" ng-include="'plugins/kubernetes/html/serviceApps.html'"></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle nav-item-iconic" data-toggle="dropdown">
+              <span class="fa pficon-user" style="font-family: PatternFlyIcons-webfont;"></span>
+              <span class="caret"></span>
+            </a>
+            <ul class="hawtio-user-dropdown dropdown-menu" hawtio-extension name="hawtio-user">
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </nav>
+
+    <hawtio-tabs-outlet></hawtio-tabs-outlet>
+
+    <div id="main" class="container-fluid container-pf-nav-pf-vertical container-pf-nav-pf-vertical-with-secondary" ng-controller="HawtioNav.ViewController" hawtio-main-outlet>
+      <div class="row" ng-class="getClass()">
+        <div ng-include src="viewPartial"></div>
+      </div>
+    </div>
+
+    <!-- add any scripts under dist/ here -->
+    <script src="app-7b8a9279.js"></script>
+
+  </body>
+</html>
