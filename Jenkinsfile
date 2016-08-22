@@ -21,7 +21,7 @@ node {
   
 	sh "yum -y install docker-engine"
 	//sh "yum install -y system-config-services"
-	sh "cat /etc/init.d/README"
+	sh "systemctl list-unit-files"
 	//sh "service docker start"
 	sh "systemctl start docker"
 	sh "docker version"
