@@ -9,11 +9,11 @@ node {
 
   stage 'Build-Stage'
 	
-    sh "sudo cp docker.txt /etc/yum.repos.d/docker.repo"
+    sh "cp docker.txt /etc/yum.repos.d/docker.repo"
   
-	sh "sudo yum install docker-engine"
-	sh "sudo service docker start"
-	sh "sudo docker run hello-world"	
+	sh "yum install docker-engine"
+	sh "service docker start"
+	sh "docker run hello-world"	
 	
   
 	//if (!fileExists ('Dockerfile')) {
