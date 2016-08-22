@@ -20,6 +20,7 @@ node {
 
   
 	sh "yum -y install docker-engine"
+	sh "docker version"
 	sh "docker run hello-world"	
 	
   
