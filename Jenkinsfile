@@ -9,6 +9,18 @@ node {
 
   stage 'Build-Stage'
 	
+    sudo su -c "echo '[dockerrepo]' >> /etc/yum.repos.d/docker.repo"
+	sudo su -c "echo 'name=Docker Repository' >> /etc/yum.repos.d/docker.repo"
+	sudo su -c "echo 'baseurl=https://yum.dockerproject.org/repo/main/centos/7/' >> /etc/yum.repos.d/docker.repo"
+	sudo su -c "echo 'enabled=1' >> /etc/yum.repos.d/docker.repo"
+	sudo su -c "echo 'gpgcheck=1' >> /etc/yum.repos.d/docker.repo"
+	sudo su -c "echo 'gpgkey=https://yum.dockerproject.org/gpg' >> /etc/yum.repos.d/docker.repo"
+  
+	
+	sudo yum install docker-engine
+	sudo service docker start
+	sudo docker run hello-world
+  
 	//if (!fileExists ('Dockerfile')) {
 	//  writeFile file: 'Dockerfile', text: 'FROM java:oracle-java7 \n CMD '
 	//}
