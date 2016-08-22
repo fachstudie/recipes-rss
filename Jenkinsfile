@@ -20,9 +20,9 @@ node {
 
   
 	sh "yum -y install docker-engine"
-	sh "yum install -y system-config-services"
+	//sh "yum install -y system-config-services"
 	sh "cat /etc/init.d/README"
-	sh "service docker start"
+	//sh "service docker start"
 	sh "docker version"
 	sh "docker run hello-world"	
 	
