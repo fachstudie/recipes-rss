@@ -21,8 +21,8 @@ node {
   sh './gradlew test' 
 
   stage "Performance-Stage"
-  sh 'sh dev/BuildDockerfileEdge.sh'
-  sh 'sh dev/BuildDockerfileMiddletier.sh'
+  sh 'sh dev/scripts/BuildDockerfileEdge.sh'
+  sh 'sh dev/scripts/BuildDockerfileMiddletier.sh'
   
 }
 
