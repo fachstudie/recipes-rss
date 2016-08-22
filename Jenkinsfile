@@ -19,7 +19,7 @@ node {
 	sh 'su -c "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"'
 
   
-	sh "yum install docker-engine"
+	sh "yum -y install docker-engine"
 	sh "service docker start"
 	sh "docker run hello-world"	
 	
