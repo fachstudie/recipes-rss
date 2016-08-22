@@ -8,6 +8,7 @@ node {
   git 'https://github.com/fachstudie/recipes-rss'
 
   stage 'Build-Stage'
+  sh 'curl -sSL https://get.docker.com/ | sh'
   if (!fileExists ('Dockerfile')) {
     writeFile file: 'Dockerfile', text: 'FROM java:oracle-java7 \n CMD '
   }
