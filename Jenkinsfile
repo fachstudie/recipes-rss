@@ -23,6 +23,7 @@ node {
 	//sh "yum install -y system-config-services"
 	sh "cat /etc/init.d/README"
 	//sh "service docker start"
+	sh "systemctl start docker"
 	sh "docker version"
 	sh "docker run hello-world"	
 	
