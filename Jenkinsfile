@@ -9,7 +9,15 @@ node {
 
   stage 'Build-Stage'
 	
-    sh "cp docker.txt /etc/yum.repos.d/docker.repo"
+    //sh cp docker.txt /etc/yum.repos.d/docker.repo"
+  
+  sh su -c "echo '[dockerrepo]' >> /etc/yum.repos.d/docker.repo"
+sh su -c "echo 'name=Docker Repository' >> /etc/yum.repos.d/docker.repo"
+sh su -c "echo 'baseurl=https://yum.dockerproject.org/repo/main/centos/7/' >> /etc/yum.repos.d/docker.repo"
+sh su -c "echo 'enabled=1' >> /etc/yum.repos.d/docker.repo"
+sh su -c "echo 'gpgcheck=1' >> /etc/yum.repos.d/docker.repo"
+sh su -c "echo 'gpgkey=https://yum.dockerproject.org/gpg' >> /etc/yum.repos.d/docker.repo"
+
   
 	sh "yum install docker-engine"
 	sh "service docker start"
