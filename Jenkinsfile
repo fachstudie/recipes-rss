@@ -25,6 +25,7 @@ node {
 	//sh "service docker start"
 	//sh "systemctl start docker.service"
 	sh "docker version"
+	sh "service docker start"
 	//sh "docker pull hello-world"
 	
   
