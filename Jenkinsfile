@@ -40,9 +40,20 @@ node {
   stage 'Testing-Stage'
   //sh './gradlew test' 
 
-  stage "Performance-Stage"
-  sh 'sh dev/scripts/BuildDockerfileEdge.sh'
-  sh 'sh dev/scripts/BuildDockerfileMiddletier.sh'
+  stage "Performance-Stage"cd dev/dockerfiles/edge
+
+  //sh 'sh dev/scripts/BuildDockerfileEdge.sh'
+	sh 'cd dev/dockerfiles/edge'
+	sh 'docker build -t recipes-rss-edge .'
+	sh 'docker login --username="rssfachstudie" --password="performance-aware" --email="rssfachstudie@gmail.com"'
+	sh 'docker tag -f recipes-rss-edge rssfachstudie/recipes-rss:edge'
+	sh 'docker push rssfachstudie/recipes-rss'
   
+  //sh 'sh dev/scripts/BuildDockerfileMiddletier.sh'
+	sh 'cd dev/dockerfiles/middletier'
+	sh 'docker build -t recipes-rss-middletier .'
+	sh 'docker login --username="rssfachstudie" --password="performance-aware" --email="rssfachstudie@gmail.com"'
+	sh 'docker tag -f recipes-rss-middletier rssfachstudie/recipes-rss:middletier'
+	sh 'docker push rssfachstudie/recipes-rss'
 }
 
