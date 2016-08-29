@@ -18,13 +18,14 @@ node {
 	//sh "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"
 	//sh "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"
 	//sh "cat /etc/*-release"
-  
+  	
+  	sh "yum -y update"
 	sh "yum -y install docker-engine"
+	sh "curl -fsSL https://get.docker.com/ | sh"
 	//sh "yum install -y system-config-services"
 	//sh "systemctl list-unit-files"
 	//sh "service docker start"
 	//sh "systemctl start docker.service"
-	sh "yum -y update"
 	//sh "docker pull hello-world"
 	
   
