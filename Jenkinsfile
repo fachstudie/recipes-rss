@@ -40,7 +40,7 @@ node {
   stage 'Testing-Stage'
   //sh './gradlew test' 
 
-  stage "Performance-Stage"cd dev/dockerfiles/edge
+  stage "Performance-Stage"
 
   //sh 'sh dev/scripts/BuildDockerfileEdge.sh'
 	sh 'cd dev/dockerfiles/edge'
