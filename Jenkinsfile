@@ -25,7 +25,7 @@ node {
 	//sh "service docker start"
 	//sh "systemctl start docker.service"
 	//sh "docker version"
-	sh "docker pull hello-world"	
+	sh 'su -c "docker pull hello-world"'
 	
   
 	//if (!fileExists ('Dockerfile')) {
