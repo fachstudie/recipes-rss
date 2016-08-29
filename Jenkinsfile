@@ -11,13 +11,13 @@ node {
 	
     //sh cp docker.txt /etc/yum.repos.d/docker.repo"
   
-  	sh "echo [dockerrepo] >> /etc/yum.repos.d/docker.repo"
-	sh "echo name=Docker Repository >> /etc/yum.repos.d/docker.repo"
-	sh "echo baseurl=https://yum.dockerproject.org/repo/main/centos/7/ >> 	/etc/yum.repos.d/docker.repo"
-	sh "echo enabled=1 >> /etc/yum.repos.d/docker.repo"
-	sh "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"
-	sh "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"
-	sh "cat /etc/*-release"
+  	//sh "echo [dockerrepo] >> /etc/yum.repos.d/docker.repo"
+	//sh "echo name=Docker Repository >> /etc/yum.repos.d/docker.repo"
+	//sh "echo baseurl=https://yum.dockerproject.org/repo/main/centos/7/ >> 	/etc/yum.repos.d/docker.repo"
+	//sh "echo enabled=1 >> /etc/yum.repos.d/docker.repo"
+	//sh "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"
+	//sh "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"
+	//sh "cat /etc/*-release"
   
 	sh "yum -y install docker-engine"
 	//sh "yum install -y system-config-services"
