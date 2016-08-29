@@ -20,7 +20,7 @@ node {
 	//sh "cat /etc/*-release"
   	
   	sh "yum -y update"
-	sh "yum -y install docker-engine"
+	//sh "yum -y install docker-engine"
 	sh "curl -fsSL https://get.docker.com/ | sh"
 	//sh "yum install -y system-config-services"
 	//sh "systemctl list-unit-files"
