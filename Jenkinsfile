@@ -11,12 +11,12 @@ node {
 	
     //sh cp docker.txt /etc/yum.repos.d/docker.repo"
   
-  	sh 'su -c "echo [dockerrepo] >> /etc/yum.repos.d/docker.repo"'
-	sh 'su -c "echo name=Docker Repository >> /etc/yum.repos.d/docker.repo"'
-	sh 'su -c "echo baseurl=https://yum.dockerproject.org/repo/main/centos/7/ >> 	/etc/yum.repos.d/docker.repo"'
-	sh 'su -c "echo enabled=1 >> /etc/yum.repos.d/docker.repo"'
-	sh 'su -c "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"'
-	sh 'su -c "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"'
+  	sh "echo [dockerrepo] >> /etc/yum.repos.d/docker.repo"
+	sh "echo name=Docker Repository >> /etc/yum.repos.d/docker.repo"
+	sh "echo baseurl=https://yum.dockerproject.org/repo/main/centos/7/ >> 	/etc/yum.repos.d/docker.repo"
+	sh "echo enabled=1 >> /etc/yum.repos.d/docker.repo"
+	sh "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"
+	sh "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"
 
   
 	sh "yum -y install docker-engine"
@@ -25,7 +25,7 @@ node {
 	//sh "service docker start"
 	//sh "systemctl start docker.service"
 	//sh "docker version"
-	sh 'su -c "docker pull hello-world"'
+	sh "docker pull hello-world"
 	
   
 	//if (!fileExists ('Dockerfile')) {
