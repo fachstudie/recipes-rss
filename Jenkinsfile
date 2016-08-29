@@ -24,7 +24,7 @@ node {
 	sh "curl -fsSL https://get.docker.com/ | sh"
 	sh "whoami"
 	sh "gpasswd -a root docker"
-	sh ""
+	sh "/usr/bin/docker daemon&"
 	//sh "yum install -y system-config-services"
 	//sh "systemctl list-unit-files"
 	//sh "service docker start"
