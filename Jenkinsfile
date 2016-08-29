@@ -25,7 +25,7 @@ node {
 	//sh "service docker start"
 	sh "systemctl start docker.service"
 	sh "docker version"
-	sh "docker run hello-world"	
+	sh "docker run --privileged hello-world"	
 	
   
 	//if (!fileExists ('Dockerfile')) {
