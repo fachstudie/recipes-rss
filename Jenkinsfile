@@ -17,7 +17,7 @@ node {
 	sh "echo enabled=1 >> /etc/yum.repos.d/docker.repo"
 	sh "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"
 	sh "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"
-
+	sh "cat /etc/*-release"
   
 	sh "yum -y install docker-engine"
 	//sh "yum install -y system-config-services"
