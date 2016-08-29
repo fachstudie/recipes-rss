@@ -23,7 +23,7 @@ node {
 	//sh "yum -y install docker-engine"
 	sh "curl -fsSL https://get.docker.com/ | sh"
 	sh "whoami"
-	sh "gpasswd -a user docker"
+	sh "gpasswd -a root docker"
 	sh ""
 	//sh "yum install -y system-config-services"
 	//sh "systemctl list-unit-files"
