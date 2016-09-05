@@ -1,5 +1,6 @@
 #!/usr/bin/groovy
 def utils = new io.fabric8.Utils()
+hubot room: 'fachstudie', message: "release success"
 
 node {
   def envStage = utils.environmentNamespace('staging')
@@ -8,8 +9,6 @@ node {
   //git 'https://github.com/fachstudie/recipes-rss'
 
   stage 'Build-Stage'
-  
-    hubot room: 'fachstudie', message: "release success"
     //sh cp docker.txt /etc/yum.repos.d/docker.repo"
   
   	//sh "echo [dockerrepo] >> /etc/yum.repos.d/docker.repo"
