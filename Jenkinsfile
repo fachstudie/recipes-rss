@@ -9,6 +9,8 @@ node {
 
   stage 'Build-Stage'
 	
+    sh "robot.messageRoom 'fachstudie', 'Hello room!'"
+  
     //sh cp docker.txt /etc/yum.repos.d/docker.repo"
   
   	//sh "echo [dockerrepo] >> /etc/yum.repos.d/docker.repo"
