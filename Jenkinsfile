@@ -20,7 +20,7 @@ node {
 	//sh "cat /etc/*-release"
   	//sh "yum -y update"
 	sh "yum -y install openssh-server openssh-clients initscripts openssh"
-	sh "sed -i 's/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config && sed -i 's/UsePAM.*/UsePAM no/g' /etc/ssh/sshd_config"
+	sh "sed -i 's/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g' /etc/ssh/sshd_config && sed -i 's/UsePAM.*/UsePAM no/g' /etc/ssh/sshd_config"
 	sh "cat /etc/ssh/sshd_config"
 	sh "sshd-keygen"
 	sh "/usr/sbin/sshd -d -f /etc/ssh/sshd_config&"
