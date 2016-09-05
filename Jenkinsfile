@@ -20,7 +20,7 @@ node {
 	//sh "cat /etc/*-release"
   	sh "yum -y update"
 	sh "yum -y install openssh-server openssh-clients"
-	sh "/usr/sbin/sshd -d -f /etc/ssh/sshd_config"
+	sh "/usr/sbin/sshd -d -f /etc/ssh/sshd_config&"
 	sh "yum -y install epel-release"
 	sh "yum --enablerepo=epel -y install sshpass"
 	sh "yum -y install sshpass"
