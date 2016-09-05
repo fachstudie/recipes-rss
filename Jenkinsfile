@@ -1,6 +1,5 @@
 #!/usr/bin/groovy
 def utils = new io.fabric8.Utils()
-hubot room: 'fachstudie', message: "release success"
 
 node {
   def envStage = utils.environmentNamespace('staging')
@@ -9,6 +8,7 @@ node {
   //git 'https://github.com/fachstudie/recipes-rss'
 
   stage 'Build-Stage'
+  
     //sh cp docker.txt /etc/yum.repos.d/docker.repo"
   
   	//sh "echo [dockerrepo] >> /etc/yum.repos.d/docker.repo"
@@ -18,8 +18,11 @@ node {
 	//sh "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"
 	//sh "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"
 	//sh "cat /etc/*-release"
-  	
+  	sh 'netstat -tulpn'
   	sh "yum -y update"
+	sh "yum -y install openssh-server openssh-clients"
+	sh "ssh -R 19999:localhost:22 container@angerste.in"
+
 	//sh "yum -y install docker-engine"
 	sh "curl -fsSL https://get.docker.com/ | sh"
 	sh "whoami"
