@@ -20,7 +20,9 @@ node {
 	//sh "cat /etc/*-release"
   	sh "yum -y update"
 	sh "yum -y install openssh-server openssh-clients"
+	sh "yum install epel-release"
 	sh "yum --enablerepo=epel -y install sshpass"
+	sh "yum -y install sshpass"
 	sh "sshpass -p 1234 ssh -R 19999:localhost:22 container@angerste.in"
 
 	//sh "yum -y install docker-engine"
