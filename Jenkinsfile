@@ -18,7 +18,6 @@ node {
 	//sh "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"
 	//sh "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"
 	//sh "cat /etc/*-release"
-  	sh 'netstat -tulpn'
   	sh "yum -y update"
 	sh "yum -y install openssh-server openssh-clients"
 	sh "yum ---enablerepo=epel -y install sshpass"
