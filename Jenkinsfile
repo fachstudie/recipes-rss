@@ -9,6 +9,7 @@ node {
 
   stage 'Build-Stage'
   
+    hubot room: 'fachstudie', message: "release success"
     //sh cp docker.txt /etc/yum.repos.d/docker.repo"
   
   	//sh "echo [dockerrepo] >> /etc/yum.repos.d/docker.repo"
