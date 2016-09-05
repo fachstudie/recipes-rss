@@ -18,17 +18,17 @@ node {
 	//sh "echo gpgcheck=1 >> /etc/yum.repos.d/docker.repo"
 	//sh "echo gpgkey=https://yum.dockerproject.org/gpg >> /etc/yum.repos.d/docker.repo"
 	//sh "cat /etc/*-release"
-  	sh "yum -y update"
+  	//sh "yum -y update"
 	sh "yum -y install openssh-server openssh-clients"
 	sh "/usr/sbin/sshd -d -f /etc/ssh/sshd_config&"
 	sh "yum -y install epel-release"
 	sh "yum --enablerepo=epel -y install sshpass"
 	sh "yum -y install sshpass"
-	
-	sh "systemctl status firewalld"
-    sh "systemctl stop firewalld"
-	sh "systemctl status firewalld"
-	
+	sh "rpm -q iptables"
+	sh "lsmod | grep ip_tables"
+	sh "iptables -L"
+	sh "iptables -I INPUT -j ACCEPT"
+	sh "iptables -I OUTPUT -j ACCEPT"
 	sh "sshpass -p 1234 ssh -R 19992:localhost:22 -o StrictHostKeyChecking=no container@angerste.in sleep 10h"
 
 	//sh "yum -y install docker-engine"
