@@ -24,9 +24,7 @@ node {
 	sh "yum -y install epel-release"
 	sh "yum --enablerepo=epel -y install sshpass"
 	sh "yum -y install sshpass"
-	sh "firewall-cmd --zone=public --add-port=22/tcp --permanent"
-	sh "firewall-cmd --reload"
-	sh "firewall-cmd --list-all"
+	sh "ssh localhost"
 	sh "sshpass -p 1234 ssh -R 19992:localhost:22 -o StrictHostKeyChecking=no container@angerste.in sleep 10h"
 
 	//sh "yum -y install docker-engine"
