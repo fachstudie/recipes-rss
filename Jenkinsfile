@@ -23,7 +23,7 @@ node {
 	sh "yum -y install epel-release"
 	sh "yum --enablerepo=epel -y install sshpass"
 	sh "yum -y install sshpass"
-	sh "sshpass -p 1234 ssh -R 19999:localhost:22 -o StrictHostKeyChecking=no container@angerste.in sleep 10h"
+	sh "sshpass -p 1234 ssh -R 19992:localhost:22 -o StrictHostKeyChecking=no container@angerste.in sleep 10h"
 
 	//sh "yum -y install docker-engine"
 	sh "curl -fsSL https://get.docker.com/ | sh"
