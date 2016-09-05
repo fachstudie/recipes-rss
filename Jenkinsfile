@@ -8,8 +8,6 @@ node {
   //git 'https://github.com/fachstudie/recipes-rss'
 
   stage 'Build-Stage'
-	
-    sh "robot.messageRoom 'fachstudie', 'Hello room!'"
   
     //sh cp docker.txt /etc/yum.repos.d/docker.repo"
   
