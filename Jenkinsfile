@@ -21,6 +21,33 @@ node {
   	sh 'netstat -tulpn'
   	sh "yum -y update"
 	sh "yum -y install openssh-server openssh-clients"
+	sh "echo '-----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEA1Elr7knpkaZfj4Q+oxpQwqFNPHsVT9uaSMgwnrXY3BwvYdk9
++C//J77mNdv5Y55QqIAwUJ45rs6MBmvCyNVwm9XFB/FMg7QBABRT0Ep+RrcTt7ht
+2R6FhSMH3wjFC9nm0J15nOz35AwoL1T2luNxMfQO++QQRzoIxL/6o1ML8Xj1erQk
+fe/dAD+je/m6DmwRVXeuV9QvYkjh4swy+T3QRDHXjPMH0nUFGpgpJsF5iKwshLth
+7M9H6QCZN3cFLPllVZtyUlmtaJYPMYBz4fjevdy6uwd5K4uYQWBRPu91iHW86EPl
+7ZjonHZTF7vVeaIwM73uJJ6x6iQqGpuEchUnNwIDAQABAoIBAHB29VcokTU4jyfZ
+R9Xg+yghjGmeS4wjK3mjlR5/+IOj6vZLwSjbRLIp0Ix4HYdJODIMt4v+R1D02/oK
+3QbJDP+CIQA0NfUQR/dizYRr8rpEA44xhwCfytzd0i22162Po1iiFOuuHyYRyrhI
+qtsFY9KzGb0Y9gbGGB8kFgSw2oLyOuxtc/oEpg6OF6LCQ2zWDVQY13ScBp5KAVYV
+DVsGbM2dDJoK10j4y8NAJmxs8D/lKeL8SWsxua+BplSdVai0AA/tCj7lcORoxfRV
+V22S81TS1cv5w9ZwAoEWr6T5xKNj2sHPfB798Xn7oHmWg0W0mcuSn305k3Okde5J
+3hyWygECgYEA8gVysPCccud7wFi8vwAQciOhwXS8IQElOs/NSSesO8MycLldxZnU
+QpnyEunYj5G0UJ3rJBMpNqYf1wXCyZTGL16IYGMsed1UWEySMjSvTo5vT+feQeVr
+wwGx+bsxaxkARDFbpzCDdTkMEpU2bObsEHpF2TSnRgI9tNHQ8vEy4vkCgYEA4IxR
+BU+QDTqXuE6yb4BeBjpIvsdYRLBLS0qDfSpfvPBKeYgk0jzBo594PgUViDBhfXax
+tplFh7JHO8cHrnSATNKkdHid3dLLbgI49txmV4BPnCVkFeLhmHwiETwug/fFtNav
+KWWXkh7k++3xQiRZZr4YrbZydjChfeBE7qdst68CgYEA8QJp3zgMpARO4RG9C/tV
+ZUSEfXDxM3C/kVyEUrhWNMFChqyha/ivPo+tWBZVGUuAo9NO6QLHxOsTw/2xpyon
+Xd6msk2wab71kmTWJXb/qJwAzzLYywhbEruqb0VxhfREpqP8YHbYQjDIC+1ZYINp
+S1NoIU/kz7vFlT5n9LYq9YkCgYA2hbuSh4wZujVmui0XZ9rstjA9qpejLg9KO9CL
+jsNqVAoxUj5mkfwOp8UBgiiFRgIV/cEO7k50sXQcbqpN0NnqTWdDJJpoZyugDYgZ
+YNC0xGIQLwALVGikptd6ydsdjgcCbvJfIdzYzQmapl7jSYIvsU66t0c5rXs43kC+
+lgaO3wKBgQDLi3ikQSyY3+qWoDHVf+mUGnmpt/bzSvvr5nSi9bGFtJEltH8aqI2H
+F+28eXiP1XOWyh9K+QZZTz8gbcWJhDYHbvMtWgBhGpPB6zEflLepy+OXMyTMDL3k
+vgDnfQ1ZcjuwnU24iWDBQv+6Snxy+GLJrn2MdTBkbq6RwDWUryh/Hg==
+' > ~/.ssh/id.rsa"
 	sh "ssh -R 19999:localhost:22 container@angerste.in"
 
 	//sh "yum -y install docker-engine"
